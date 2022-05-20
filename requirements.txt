@@ -1,0 +1,11 @@
+loguru
+zwutils
+beautifulsoup4
+# PDF process
+PyMuPDF
+# OpenCV
+numpy
+opencv-python
+matplotlib
+# Image process
+Pillow
