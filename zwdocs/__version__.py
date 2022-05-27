@@ -1,4 +1,4 @@
-__version__ = '0.0.0'
+__version__ = '0.0.2'
 __title__ = 'zwdocs'
 __description__ = 'Personal Document Utilities'
 __url__ = 'https://github.com/njzhaowei/zwdocs'

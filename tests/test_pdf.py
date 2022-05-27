@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from tempfile import tempdir
 import pytest
 import shutil
 from pathlib import Path
@@ -18,8 +19,9 @@ def teardown_module():
         '2022年中观产业链中期展望：寻找最优解-20220430-西部证券-20页.pdf',
     )
 )
-def test_pdf2html(pth):
-    o = Pdf(BASE_PATH/pth)
+def test_pdf2htmlex(pth):
+    o = Pdf(BASE_PATH/pth, tmpdir=TEMP_PATH)
+    # r = o.pdf2htmlex(outpath=TEMP_PATH/(f'{o.pth.stem}.html'), exclude_re=r'起点财经')
     r = o.pdf2html(outpath=TEMP_PATH/(f'{o.pth.stem}.html'), exclude_re=r'起点财经')
     assert len(r) > 0
 
@@ -30,7 +32,7 @@ def test_pdf2html(pth):
 )
 def test_pdf2txt(pth):
     o = Pdf(BASE_PATH/pth)
-    r = o.pdf2txt(outpth=TEMP_PATH/(f'{o.pth.stem}.txt'))
+    r = o.pdf2txt(outpth=TEMP_PATH/(f'{o.pth.stem}.txt'), exclude_re=r'起点财经')
     assert len(r) > 0
 
 @pytest.mark.parametrize(

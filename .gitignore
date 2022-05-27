@@ -41,3 +41,5 @@ nosetests.xml
 bin/chromedriver.exe
 data/govsite
 data/searchbar
+tests/data/pdf/tmp
+bin/pdf2htmlEX
